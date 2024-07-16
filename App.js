@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Platform, Pressable } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
 
 const statusBarHeight = StatusBar.StatusBarHeight
@@ -28,6 +29,7 @@ export default function App() {
 
       <Pressable style={styles.button}>
         <Text style={styles.buttonText}>Gerar roteiro</Text>
+        <MaterialIcons name="travel-explore" size={24} color="#fff"/>
       </Pressable>
 
     </View>
@@ -37,7 +39,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#f2f2f2',
     alignItems: 'center',
     paddingTop: 20,
   },
@@ -47,7 +49,7 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === 'android' ? statusBarHeight : 54,
   },
   form: {
-    backgroundColor: '#ffffff',
+    backgroundColor: '#fff',
     width: '90%',
     borderRadius: 8,
     padding: 16,
@@ -69,5 +71,10 @@ const styles = StyleSheet.create({
   },
   days: {
     backgroundColor: '#f1f1f1',
-  }
+  },
+  button: {
+    backgroundColor: '#FF5656',
+    width: '90%',
+    padding: 14,
+  },
 });
