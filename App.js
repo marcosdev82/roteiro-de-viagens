@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, Platform } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Platform, Pressable } from 'react-native';
 import Slider from '@react-native-community/slider';
 
 const statusBarHeight = StatusBar.StatusBarHeight
@@ -25,6 +25,10 @@ export default function App() {
           maximumTrackTintColor="#000000"
         />
       </View>
+
+      <Pressable style={styles.button}>
+        <Text style={styles.buttonText}>Gerar roteiro</Text>
+      </Pressable>
 
     </View>
   );
