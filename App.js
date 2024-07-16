@@ -46,5 +46,14 @@ const styles = StyleSheet.create({
   label: {
     fontWeight: 'bold',
     fontSize: 18,
+    marginBottom: 8,
+  },
+  input: {
+    borderWidth: 1,
+    borderRadius: 4,
+    borderColor: #94a3b8,
+    padding: 8,
+    fontSize: 16,
+    marginBottom: 16,
   }
 });
