@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Platform } from 'react-native';
+import Slider from '@react-native-community/slider';
 
 const statusBarHeight = StatusBar.StatusBarHeight
 
@@ -16,7 +17,13 @@ export default function App() {
           placeholder='Ex: Fortaleza, CE' 
           style={styles.input}
         />
-        <Text>Tempo de estadia: <Text style={styles.days}>10</Text> dias</Text>
+        <Text style={styles.label}>Tempo de estadia: <Text style={styles.days}>10</Text> dias</Text>
+        <Slider
+          minimumValue={1}
+          maximumValue={7}
+          minimumTrackTintColor="#009688"
+          maximumTrackTintColor="#000000"
+        />
       </View>
 
     </View>
@@ -56,4 +63,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 16,
   },
+  days: {
+    backgroundColor: '#f1f1f1',
+  }
 });
