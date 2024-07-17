@@ -9,7 +9,7 @@ const statusBarHeight = StatusBar.StatusBarHeight
 export default function App() {
 
   const [city, setCity] = useState("");
- 
+  const [day, setDay] = useState(3)
   const [loading, setLoading] = useState(false);
   const [travel, setTravel] = useState();
 
