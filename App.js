@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Platform, Pressable, ScrollView, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Platform, Pressable, ScrollView, ActivityIndicator, Alert } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
 
@@ -13,7 +13,12 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [travel, setTravel] = useState();
 
-
+  async function handleGenerate(){
+    if (city === '') {
+      Alert.alert('Atenção', 'Preencha o nome da cidade');
+      return;
+    } 
+  }
 
   return (
     <View style={styles.container}>
@@ -39,7 +44,7 @@ export default function App() {
         />
       </View>
 
-      <Pressable style={styles.button} onPress={handleGenerate}>
+      <Pressable style={styles.button} onPress={handleGenerate()}>
         <Text style={styles.buttonText}>Gerar roteiro</Text>
         <MaterialIcons name="travel-explore" size={24} color="#fff"/>
       </Pressable>
