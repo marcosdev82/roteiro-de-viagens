@@ -9,9 +9,11 @@ const statusBarHeight = StatusBar.StatusBarHeight
 export default function App() {
 
   const [city, setCity] = useState("");
-  const [day, setDay] = useState(3)
+  const [days, setDay] = useState(3)
   const [loading, setLoading] = useState(false);
   const [travel, setTravel] = useState();
+
+
 
   return (
     <View style={styles.container}>
@@ -23,17 +25,21 @@ export default function App() {
         <TextInput
           placeholder='Ex: Fortaleza, CE' 
           style={styles.input}
+          value={city}
+          onChangeText={(text) => {setCity(text)}}        
         />
-        <Text style={styles.label}>Tempo de estadia: <Text style={styles.days}>10</Text> dias</Text>
+        <Text style={styles.label}>Tempo de estadia: <Text style={styles.days}>{days.toFixed(0)}</Text> dias</Text>
         <Slider
           minimumValue={1}
           maximumValue={7}
           minimumTrackTintColor="#009688"
           maximumTrackTintColor="#000000"
+          value={days}
+          onValueChange={(days) => setDay(days)}
         />
       </View>
 
-      <Pressable style={styles.button}>
+      <Pressable style={styles.button} onPress={handleGenerate}>
         <Text style={styles.buttonText}>Gerar roteiro</Text>
         <MaterialIcons name="travel-explore" size={24} color="#fff"/>
       </Pressable>
